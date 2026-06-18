@@ -1,0 +1,44 @@
+site_name: Healthcare Contact Center
+site_description: Solution & Technical Design Document for Agentic Call Workflow Engine
+site_author: Sapna Utage
+copyright: Copyright &copy; 2026
+
+theme:
+  name: material
+  logo: null
+  favicon: null
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - tables
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search
