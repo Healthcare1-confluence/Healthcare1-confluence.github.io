@@ -1,1 +1,3307 @@
-<h1>Healthcare Contact Center Documentation</h1><p>Building...</p>
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Solution & Technical Design Document for Agentic Call Workflow Engine">
+      
+      
+        <meta name="author" content="Sapna Utage">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="None">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Healthcare Contact Center</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#healthcare-ai-contact-center-platform" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Healthcare Contact Center" class="md-header__button md-logo" aria-label="Healthcare Contact Center" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Healthcare Contact Center
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Healthcare AI Contact Center Platform
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Healthcare Contact Center" class="md-nav__button md-logo" aria-label="Healthcare Contact Center" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Healthcare Contact Center
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Healthcare AI Contact Center Platform
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Healthcare AI Contact Center Platform
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#business-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Context
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#industry-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Industry Challenges and Business Impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#business-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Business Impact of Production Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client Context — Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Goals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution Direction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solution-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#competitive-differentiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Competitive Differentiation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Benchmarks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-level-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-level-platform-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Platform Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Nodes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Edges
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Compilation and Startup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e2e-workflow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-End Workflow Diagram
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-step1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Inbound Call
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-step2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — FastAPI + CallWorkflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-step3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Coordinator Node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-step4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Specialist Agent Routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-step5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Data Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-step6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — LLM Synthesis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-step7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — TTS Response
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Schema Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Schema Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#callworkflowstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CallWorkflowState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinatoroutput" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CoordinatorOutput
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invokeresponse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        InvokeResponse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coordinator-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coordinator Node
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coordinator Node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coordinator-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordinator-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM Call Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claims-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claims Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Claims Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claims-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claims-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Context Enrichment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claims-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Connectivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benefits Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Index Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appointment-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appointment Scheduler Agent
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Appointment Scheduler Agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appt-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appt-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appt-nl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Natural Language Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#general-responder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Responder
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hitl-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Human-in-the-Loop (HITL)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Human-in-the-Loop (HITL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hitl-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trigger Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hitl-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turn-by-Turn Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Turn-by-Turn Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hitl-turn1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turn 1 — Missing Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hitl-turn2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turn 2 — Data Provided
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hitl-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Preservation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistence and Checkpointing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Persistence and Checkpointing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mongodb-checkpointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MongoDB Checkpointer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memorysaver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MemorySaver Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thread-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thread ID Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#walkthroughs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intent Flow Walkthroughs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intent Flow Walkthroughs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#walk-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Intent — Greeting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walk-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benefits Intent — Coverage Enquiry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walk-claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claims Intent — Happy Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walk-appointment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appointment Intent — Booking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Body
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Response Body
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure and Integrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Infrastructure and Integrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#azure-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langfuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LangFuse Observability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#env-vars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security and Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security and Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication and Authorisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hipaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HIPAA Alignment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Design
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#container-arch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability and Monitoring
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Observability and Monitoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alerting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#claims-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claims Intent — Full Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hitl-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HITL Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Decisions and Trade-offs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roadmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Considerations and Roadmap
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Considerations and Roadmap">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#near-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Near-Term (Next 3 Months)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-Term (3–9 Months)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Term (9+ Months)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Evolution: Compliance-Driven Intelligence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Appointment Booking Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="healthcare-ai-contact-center-platform">Healthcare AI Contact Center Platform<a class="headerlink" href="#healthcare-ai-contact-center-platform" title="Permanent link">&para;</a></h1>
+<p><em>Solution &amp; Technical Design Document — Agentic Call Workflow Engine — LangGraph + Azure</em></p>
+<p><code>Version 1.0</code> <code>2026</code></p>
+<hr />
+<h2 id="business-context">Business Context<a class="headerlink" href="#business-context" title="Permanent link">&para;</a></h2>
+<!-- TODO: paste your existing content for this section here. -->
+
+<h3 id="industry-challenges">Industry Challenges and Business Impact<a class="headerlink" href="#industry-challenges" title="Permanent link">&para;</a></h3>
+<p>Healthcare contact centres handle millions of calls annually covering claims status, benefits enquiries, appointment scheduling, member account updates, and general assistance. Manual handling is expensive, error-prone, and creates compliance risk.</p>
+<p>Common challenges include:</p>
+<ul>
+<li>Long Mean Time To Resolution (MTTR) for member queries</li>
+<li>Limited visibility across intent classification boundaries</li>
+<li>Difficulty correlating member requests with accurate backend data</li>
+<li>Dependency on senior agents and tribal knowledge for complex cases</li>
+<li>High operational costs associated with Tier-1 and Tier-2 interactions</li>
+</ul>
+<p>These challenges impact healthcare payers, providers, and members across:</p>
+<ul>
+<li>Health Insurance and Managed Care</li>
+<li>Hospital Systems and Provider Networks</li>
+<li>Pharmacy Benefit Management</li>
+<li>Medicare and Medicaid Programmes</li>
+<li>Employer-Sponsored Health Plans</li>
+</ul>
+<h3 id="business-impact">Business Impact of Production Failures<a class="headerlink" href="#business-impact" title="Permanent link">&para;</a></h3>
+<p>Industry studies consistently show that unautomated or poorly automated contact centre interactions result in significant operational and financial costs.</p>
+<table>
+<thead>
+<tr>
+<th>Impact Area</th>
+<th>Typical Business Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manual claim lookups</td>
+<td>Increased agent handle time and cost-per-call</td>
+</tr>
+<tr>
+<td>Missed appointment bookings</td>
+<td>Provider revenue loss and patient dissatisfaction</td>
+</tr>
+<tr>
+<td>Benefits misquotation</td>
+<td>Member complaints, rework, and compliance risk</td>
+</tr>
+<tr>
+<td>Escalations to senior agents</td>
+<td>Higher operational costs and longer resolution times</td>
+</tr>
+<tr>
+<td>HIPAA non-compliance</td>
+<td>Regulatory penalties and reputational damage</td>
+</tr>
+</tbody>
+</table>
+<p>Automating Tier-1 and Tier-2 interactions directly reduces cost-per-contact, improves first-call resolution rates, and ensures consistent HIPAA-compliant handling of Protected Health Information (PHI).</p>
+<h3 id="problem-statement">Client Context — Problem Statement<a class="headerlink" href="#problem-statement" title="Permanent link">&para;</a></h3>
+<p>A healthcare contact centre team handles thousands of daily calls across claims, benefits, and appointment management. Members call with specific questions but agents must navigate multiple disconnected systems — a claims portal, a benefits document repository, an EHR scheduling system — to answer them.</p>
+<p>The process becomes time-consuming because:</p>
+<ul>
+<li>No unified AI layer exists to classify intent and route to the correct backend.</li>
+<li>Multi-turn conversations lose context across HTTP requests.</li>
+<li>Appointment scheduling requires checking pre-authorization before booking.</li>
+<li>HIPAA compliance must be maintained across every interaction without exception.</li>
+</ul>
+<p>In such scenarios, handling quality depends on individual agent knowledge, making it difficult to consistently and quickly serve members at scale.</p>
+<h3 id="design-inputs">Design Inputs<a class="headerlink" href="#design-inputs" title="Permanent link">&para;</a></h3>
+<p>The following realities of healthcare contact centre operations define the design inputs for this platform:</p>
+<table>
+<thead>
+<tr>
+<th>System Characteristics</th>
+<th>Operational Realities</th>
+<th>Platform Considerations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiple intent domains across a single conversation</td>
+<td>Intent routing is manual and agent-driven</td>
+<td>Automated LLM-based intent classification required</td>
+</tr>
+<tr>
+<td>Backend data spread across SQL, search, and EHR</td>
+<td>No unified data access layer</td>
+<td>Agent-specific tool sets per intent domain</td>
+</tr>
+<tr>
+<td>HIPAA-regulated member data in every interaction</td>
+<td>PHI exposure risk in logs and LLM prompts</td>
+<td>PHI masking and parameterised queries mandatory</td>
+</tr>
+<tr>
+<td>Multi-turn conversations common for complex queries</td>
+<td>Context is lost between calls</td>
+<td>Durable MongoDB checkpointing required</td>
+</tr>
+</tbody>
+</table>
+<h3 id="constraints">Constraints<a class="headerlink" href="#constraints" title="Permanent link">&para;</a></h3>
+<p>The system must operate within the following constraints:</p>
+<ul>
+<li>Handle concurrent calls across claims, benefits, appointment, and general intents.</li>
+<li>Never invoke a specialist agent without required member identifiers being present or requested.</li>
+<li>Not rely on manual intervention during live call processing.</li>
+<li>Maintain HIPAA compliance in all LLM prompts, logs, and stored checkpoints.</li>
+<li>Produce responses readable by TTS engines — no markdown, no formatting symbols.</li>
+<li>Complete responses within 3 seconds P95 for general intent; under 5 seconds for specialist agents.</li>
+</ul>
+<h3 id="platform-goals">Platform Goals<a class="headerlink" href="#platform-goals" title="Permanent link">&para;</a></h3>
+<p>The platform provides a structured and intelligent approach to healthcare contact automation with the following objectives:</p>
+<ul>
+<li>Automate 60–70% of Tier-1 calls with zero human agent involvement.</li>
+<li>Classify caller intent accurately on every turn using Azure OpenAI.</li>
+<li>Enforce Human-in-the-Loop (HITL) gates to ensure no member is mis-served due to missing data.</li>
+<li>Preserve multi-turn conversation state durably across HTTP requests using MongoDB.</li>
+<li>Support appointment lifecycle management with pre-authorization enforcement.</li>
+<li>Deliver HIPAA-aligned PHI handling across every system boundary.</li>
+</ul>
+<p>With this context in place, the next step is to understand how the system approaches solving it.</p>
+<h3 id="solution-direction">Solution Direction<a class="headerlink" href="#solution-direction" title="Permanent link">&para;</a></h3>
+<p>To achieve these goals, the platform is designed to:</p>
+<ul>
+<li>Classify the caller's intent on every turn using a structured LLM call.</li>
+<li>Enrich state with member identifiers extracted from the conversation.</li>
+<li>Route to specialist agents that combine tool use and LLM reasoning.</li>
+<li>Use this combined understanding to deliver plain-English answers via TTS.</li>
+</ul>
+<p>This approach transitions healthcare contact handling from a manual, agent-driven activity to a system-assisted, intelligence-driven process.</p>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<h3 id="solution-options">Solution Options<a class="headerlink" href="#solution-options" title="Permanent link">&para;</a></h3>
+<p>Multiple approaches were evaluated for automating healthcare contact centre interactions.</p>
+<p><strong>Rule-Based IVR Systems</strong></p>
+<p>These rely on fixed decision trees and touch-tone menus, making them unsuitable for natural language queries and multi-intent conversations.</p>
+<p><strong>Single LLM Chatbots</strong></p>
+<p>While flexible, they lack structured tool use, do not enforce HITL safety nets, and cannot maintain durable multi-turn state.</p>
+<p><strong>Monitoring and Observability Platforms</strong></p>
+<p>These provide call analytics but do not reason over backend data or classify healthcare-specific intents.</p>
+<p><strong>Agentic Multi-Agent Architecture (Recommended)</strong></p>
+<ul>
+<li>Combines structured intent classification with specialist agent tool use.</li>
+<li>Bridges the gap between natural language and backend data systems.</li>
+<li>Best fit for multi-intent, multi-turn, HIPAA-compliant healthcare automation.</li>
+</ul>
+<h3 id="competitive-differentiation">Competitive Differentiation<a class="headerlink" href="#competitive-differentiation" title="Permanent link">&para;</a></h3>
+<p>The healthcare AI contact centre market includes a range of offerings — from generic large-language-model chatbots to legacy interactive voice response systems and call analytics dashboards. While each addresses a narrow slice of the problem, none combines healthcare-domain intelligence, durable multi-turn state, live backend integration, and built-in compliance enforcement in a single cohesive platform. The table below maps the five most meaningful differentiators across solution categories.</p>
+<table>
+<thead>
+<tr>
+<th>Differentiator</th>
+<th>Rule-Based IVR</th>
+<th>Generic LLM Chatbot</th>
+<th>Analytics / Observability Platform</th>
+<th>This Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Healthcare-Domain Specificity</td>
+<td>Scripted responses only; no HIPAA enforcement by design</td>
+<td>General-purpose; PHI handling and pre-auth logic must be custom-built and maintained separately</td>
+<td>Reads call data; does not act on it or enforce compliance</td>
+<td>HIPAA-aligned PHI masking, parameterised queries, and pre-authorisation enforcement built into every agent and tool</td>
+</tr>
+<tr>
+<td>Multi-Agent Orchestration</td>
+<td>Single decision tree; no agent composition</td>
+<td>Single LLM call per turn; no structured routing to specialist logic</td>
+<td>Not applicable — passive observation only</td>
+<td>LangGraph StateGraph with coordinator node routing to dedicated specialist agents (Claims, Benefits, Appointment, General) per classified intent</td>
+</tr>
+<tr>
+<td>Durable Multi-Turn State</td>
+<td>Stateless between DTMF inputs; no conversation memory</td>
+<td>Typically session-scoped; state lost on disconnect or timeout</td>
+<td>Stores transcripts but does not carry live state across turns</td>
+<td>MongoDB checkpointing persists full <code>CallWorkflowState</code> across HTTP requests, enabling seamless multi-turn resumption and audit replay</td>
+</tr>
+<tr>
+<td>Live Backend Integration via Tool Use</td>
+<td>Reads from a single static script; no real-time data access</td>
+<td>RAG retrieval from static documents; no transactional write capability</td>
+<td>Read-only analytics on historical data</td>
+<td>ReAct agents invoke typed tools against Azure SQL (claims, appointments), Azure AI Search (benefits), and EHR systems in real time — including transactional writes such as booking and cancellation</td>
+</tr>
+<tr>
+<td>Human-in-the-Loop (HITL) Safety Gates</td>
+<td>Escalates on unrecognised input only; no structured safety net</td>
+<td>HITL, if present, is a post-hoc add-on requiring custom prompt engineering per use case</td>
+<td>Flags calls after the fact; cannot intervene during live handling</td>
+<td>HITL is a first-class graph node: the coordinator pauses execution and requests missing identifiers before any specialist agent is invoked, preventing member mis-service by design</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Healthcare-Domain Specificity</strong></p>
+<p>Generic AI platforms require extensive custom development to handle healthcare-specific requirements such as PHI masking, pre-authorisation enforcement, and HIPAA-compliant audit logging. This platform encodes those requirements directly into its agent prompts, tool implementations, and state schema — meaning compliance is structural, not a layer applied after the fact. Every LLM prompt is designed to avoid logging raw member data, and every SQL tool uses parameterised queries to prevent injection and inadvertent PHI exposure.</p>
+<p><strong>Orchestrated Multi-Agent Reasoning vs. Single-Model Approaches</strong></p>
+<p>Single LLM chatbots handle all intents within one prompt context, which degrades accuracy as conversation complexity grows and makes it difficult to enforce intent-specific data access boundaries. This platform separates concerns explicitly: the coordinator performs one focused structured classification call, and each specialist agent operates within a scoped tool set appropriate to its domain. This means a benefits query never has access to appointment booking tools, and vice versa — reducing both error surface and compliance risk.</p>
+<p><strong>Transactional Tool Use vs. Retrieval-Only Architectures</strong></p>
+<p>Most RAG-based healthcare bots retrieve content from static benefit documents and surface it as text. This platform goes further: specialist agents read and write to live backend systems. The AppointmentSchedulerAgent, for example, validates pre-authorisation, checks real-time slot availability, atomically books the appointment, and updates the provider slot record — all within a single ReAct agent loop. This closes the loop between natural language and operational outcome without requiring a human agent to execute the backend steps.</p>
+<h3 id="output-benchmarks">Output Benchmarks<a class="headerlink" href="#output-benchmarks" title="Permanent link">&para;</a></h3>
+<p>The following benchmarks define the measurable performance envelope the platform is designed to operate within. Metrics are classified as Target (design goal, to be validated post-deployment) or Measured (empirically confirmed). Formal instrumentation for all metrics is planned via LangFuse dashboards as part of the near-term roadmap.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Benchmark</th>
+<th>Status</th>
+<th>Source / Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Response Latency — General Intent</td>
+<td>P95 ≤ 3 seconds end-to-end</td>
+<td>Target</td>
+<td>Defined in system constraints. General intent requires a single coordinator LLM call with no specialist agent invocation.</td>
+</tr>
+<tr>
+<td>Response Latency — Specialist Agents</td>
+<td>P95 ≤ 5 seconds end-to-end</td>
+<td>Target</td>
+<td>Defined in system constraints. Includes coordinator classification, ReAct agent tool calls against Azure SQL / Azure AI Search, and TTS-ready response assembly.</td>
+</tr>
+<tr>
+<td>Tier-1 Call Automation Rate</td>
+<td>60–70% of inbound Tier-1 calls fully automated with zero human agent involvement</td>
+<td>Target</td>
+<td>Platform goal. Covers claims status, benefit lookups, and standard appointment booking scenarios that do not require clinical judgement or exception handling.</td>
+</tr>
+<tr>
+<td>Intent Classification Accuracy</td>
+<td>≥ 95% correct intent classification across claims, benefits, appointment, and general intents</td>
+<td>Target</td>
+<td>Derived from coordinator design using structured JSON output via Azure OpenAI. To be validated against a labelled call transcript evaluation set via LangFuse prompt versioning.</td>
+</tr>
+<tr>
+<td>Appointment Booking Handle Time</td>
+<td>≤ 30 seconds for standard pre-authorised booking scenarios</td>
+<td>Target</td>
+<td>Referenced in the Example Appointment Booking Flow. Compared against a baseline of several minutes for manual agent-driven cross-system booking.</td>
+</tr>
+<tr>
+<td>HITL Escalation Rate</td>
+<td>≤ 15% of calls requiring human-in-the-loop intervention for missing identifiers or unresolvable intents</td>
+<td>Target</td>
+<td>HITL is a safety net, not a routine path. Escalation rate above 20% would indicate degraded member experience or upstream identifier-injection failures from the channel layer.</td>
+</tr>
+<tr>
+<td>Cost per Query</td>
+<td>To be baselined post-deployment</td>
+<td>Target</td>
+<td>LangFuse token-usage tracing per intent will enable cost-per-query reporting. Coordinator uses gpt-4o-mini to minimise cost on high-frequency classification calls.</td>
+</tr>
+<tr>
+<td>LangGraph Graph Compilation Overhead</td>
+<td>One-time cost on first request; ≤ 0 ms on all subsequent requests (singleton cache)</td>
+<td>Target</td>
+<td>Lazy compilation with singleton <code>CompiledGraph</code> cache eliminates per-request assembly cost. Cold-start compilation is borne once per service instance lifecycle.</td>
+</tr>
+<tr>
+<td>State Checkpoint Restore Latency</td>
+<td>≤ 50 ms for MongoDB checkpoint retrieval on returning calls</td>
+<td>Target</td>
+<td>MongoDB <code>langgraph_checkpoints</code> collection indexed on <code>thread_id</code>. In-memory <code>MemorySaver</code> fallback used when MongoDB is unavailable, with sub-millisecond restore.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Benchmark Monitoring Strategy</strong></p>
+<p>Once deployed, all latency, accuracy, and cost benchmarks will be tracked through LangFuse distributed traces. Each graph invocation emits a trace covering the coordinator LLM call, any specialist agent ReAct loop iterations, individual tool call durations, and the final response assembly step. Per-intent dashboards will surface HITL rate trends over time, allowing the team to tune intent prompts and HITL thresholds based on real traffic patterns rather than design assumptions.</p>
+<p>Prompt versioning via LangFuse will support A/B evaluation of <code>INTENT_PROMPT</code> and <code>GENERAL_PROMPT</code> variants, enabling data-driven improvement of classification accuracy without requiring full redeployment cycles. Cost-per-query reporting will be broken down by intent domain to identify optimisation opportunities — for example, replacing the coordinator model with a fine-tuned smaller model once sufficient training data is available, as noted in the long-term roadmap.</p>
+<h3 id="high-level-architecture">High-Level Architecture<a class="headerlink" href="#high-level-architecture" title="Permanent link">&para;</a></h3>
+<p>The platform follows a layered architecture pattern. An inbound HTTP request from the voice/channel integration layer hits the FastAPI service, which delegates to the <code>CallWorkflow</code> orchestrator. <code>CallWorkflow</code> compiles and caches the LangGraph <code>StateGraph</code>, then invokes it with the caller's question and context. The graph routes through the coordinator and selected specialist agent, then returns a structured <code>InvokeResponse</code> to the API caller.</p>
+<h3 id="high-level-platform-workflow">High-Level Platform Workflow<a class="headerlink" href="#high-level-platform-workflow" title="Permanent link">&para;</a></h3>
+<p>The diagram below shows how the seven layers of the platform interact — from channel ingestion through multi-agent reasoning to member response delivery, underpinned by a unified state and knowledge storage layer.</p>
+<p><img alt="High-Level Platform Workflow — seven layers" class="diagram" src="images/high_level_platform_workflow_diagram.png" /></p>
+<h3 id="runtime-architecture">Runtime Architecture<a class="headerlink" href="#runtime-architecture" title="Permanent link">&para;</a></h3>
+<p>The platform is organised into three logical tiers. Tier 0 handles orchestration — classifying intent, planning agent dispatch, enforcing HITL safety, and validating outputs before delivery. Tier 1 runs the primary specialist agents in ReAct tool-use loops. Tier 2 provides lightweight single-call sub-agents spawned by Tier 1 for focused data retrieval tasks.</p>
+<p><img alt="Runtime Architecture — agent tiers" class="diagram" src="images/runtime_architecture_diagram.png" /></p>
+<h3 id="graph-nodes">Graph Nodes<a class="headerlink" href="#graph-nodes" title="Permanent link">&para;</a></h3>
+<p>The graph topology is a one-shot decision tree: every invocation enters at <code>__start__</code>, passes through the coordinator, and terminates at <code>__end__</code>. There are no cycles except the internal ReAct tool-use loop inside specialist agent sub-graphs.</p>
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Type</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__start__</code></td>
+<td>Virtual</td>
+<td>LangGraph entry point. Injects initial <code>CallWorkflowState</code>.</td>
+</tr>
+<tr>
+<td><code>coordinator</code></td>
+<td>Custom Node</td>
+<td>Classifies intent via LLM. Extracts <code>member_id</code>, <code>plan_id</code>, <code>date_of_service</code>. Sets <code>clarification_needed</code> flag.</td>
+</tr>
+<tr>
+<td><code>claims_agent</code></td>
+<td>Agent Node</td>
+<td>Invokes <code>ClaimsAgent.ainvoke()</code>. Executes ReAct loop with <code>query_member_info</code>, <code>query_claims</code>, <code>query_preauth</code> tools against Azure SQL.</td>
+</tr>
+<tr>
+<td><code>benefits_agent</code></td>
+<td>Agent Node</td>
+<td>Invokes <code>BenefitsAgent.ainvoke()</code>. Executes ReAct loop with <code>get_member_plan_id</code> (Azure SQL) and <code>search_plan_benefits</code> (Azure AI Search).</td>
+</tr>
+<tr>
+<td><code>appointment_agent</code></td>
+<td>Agent Node</td>
+<td>Invokes <code>AppointmentSchedulerAgent.ainvoke()</code>. Executes ReAct loop with 8 tools against Azure SQL (<code>Provider_Slot_2</code>, <code>Appointment</code>, <code>pre_auth</code> tables).</td>
+</tr>
+<tr>
+<td><code>general_responder</code></td>
+<td>Custom Node</td>
+<td>Single LLM call with <code>GENERAL_PROMPT</code> system message. Returns 1-2 sentence plain-English reply.</td>
+</tr>
+<tr>
+<td><code>__end__</code></td>
+<td>Virtual</td>
+<td>LangGraph terminal node. Graph suspends here and returns final state to <code>CallWorkflow.invoke()</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="graph-edges">Graph Edges<a class="headerlink" href="#graph-edges" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Edge</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>START → coordinator</code></td>
+<td>Unconditional. Every invocation enters coordinator first.</td>
+</tr>
+<tr>
+<td><code>coordinator → claims_agent</code></td>
+<td>Conditional. Fires when intent = 'claims' AND <code>clarification_needed</code> = false.</td>
+</tr>
+<tr>
+<td><code>coordinator → benefits_agent</code></td>
+<td>Conditional. Fires when intent = 'benefits' AND <code>clarification_needed</code> = false.</td>
+</tr>
+<tr>
+<td><code>coordinator → appointment_agent</code></td>
+<td>Conditional. Fires when intent = 'appointment' AND <code>clarification_needed</code> = false.</td>
+</tr>
+<tr>
+<td><code>coordinator → general_responder</code></td>
+<td>Conditional. Fires when intent = 'general' or 'default' AND <code>clarification_needed</code> = false.</td>
+</tr>
+<tr>
+<td><code>coordinator → __end__</code></td>
+<td>Conditional. Fires when <code>clarification_needed</code> = true. Graph terminates early; clarification question returned to caller.</td>
+</tr>
+<tr>
+<td><code>claims_agent → __end__</code></td>
+<td>Unconditional. Agent completes and graph terminates.</td>
+</tr>
+<tr>
+<td><code>benefits_agent → __end__</code></td>
+<td>Unconditional. Agent completes and graph terminates.</td>
+</tr>
+<tr>
+<td><code>appointment_agent → __end__</code></td>
+<td>Unconditional. Agent completes and graph terminates.</td>
+</tr>
+<tr>
+<td><code>general_responder → __end__</code></td>
+<td>Unconditional. Responder completes and graph terminates.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="compilation-startup">Graph Compilation and Startup<a class="headerlink" href="#compilation-startup" title="Permanent link">&para;</a></h3>
+<p>Graph compilation is an expensive one-time operation. <code>CallWorkflow</code> implements a lazy singleton pattern: the first call to <code>compile()</code> performs full graph assembly; subsequent calls return the cached <code>_compiled_graph</code> instance.</p>
+<ol>
+<li>FastAPI startup fires — calls <code>CallWorkflow.compile()</code>.</li>
+<li><code>CallWorkflow</code> checks <code>_compiled_graph</code>; if already compiled, returns immediately (fast path).</li>
+<li>On first compile: <code>_get_checkpointer()</code> initialises the persistence backend.</li>
+<li><code>MongoClient</code> is created with <code>MONGODB_URL</code> and a 5-second connection timeout.</li>
+<li>If connection succeeds: <code>MongoDBSaver</code> is instantiated targeting <code>directline_db</code> database.</li>
+<li>If connection times out: <code>MemorySaver</code> is used as in-process fallback.</li>
+<li>Five nodes added: <code>coordinator</code>, <code>claims_agent</code>, <code>benefits_agent</code>, <code>appointment_agent</code>, <code>general_responder</code>.</li>
+<li><code>graph.compile(checkpointer=checkpointer)</code> produces the <code>CompiledGraph</code>.</li>
+<li><code>CompiledGraph</code> cached to <code>_compiled_graph</code> and returned to FastAPI startup.</li>
+</ol>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
+<h3 id="e2e-workflow-diagram">End-to-End Workflow Diagram<a class="headerlink" href="#e2e-workflow-diagram" title="Permanent link">&para;</a></h3>
+<p>The platform processes every inbound call through a seven-step pipeline — from channel ingestion through intent classification, specialist agent tool use, data retrieval, LLM synthesis, and durable checkpoint persistence — before delivering a plain-English TTS response to the caller.</p>
+<p><img alt="End-to-End Workflow Diagram" class="diagram" src="images/e2e_workflow_diagram.png" /></p>
+<h3 id="workflow-step1">Step 1 — Inbound Call<a class="headerlink" href="#workflow-step1" title="Permanent link">&para;</a></h3>
+<p>Every interaction begins when a member call arrives via Twilio or Azure Communication Services. The channel layer converts the audio stream to text and forwards the utterance to the FastAPI endpoint as a structured JSON payload.</p>
+<h3 id="workflow-step2">Step 2 — FastAPI + CallWorkflow<a class="headerlink" href="#workflow-step2" title="Permanent link">&para;</a></h3>
+<p>The FastAPI service validates the JWT and delegates to the <code>CallWorkflow</code> orchestrator. On the first request, the LangGraph <code>StateGraph</code> is compiled and cached. If a <code>thread_id</code> is provided, the prior checkpoint is restored from MongoDB Atlas before any node executes.</p>
+<h3 id="workflow-step3">Step 3 — Coordinator Node<a class="headerlink" href="#workflow-step3" title="Permanent link">&para;</a></h3>
+<p>A single structured Azure OpenAI call classifies the caller's intent and extracts identifiers (<code>member_id</code>, <code>plan_id</code>, <code>date_of_service</code>). A Python safety net then inspects the result — if intent is claims and <code>member_id</code> is absent, <code>clarification_needed</code> is forced to true regardless of LLM output, triggering the HITL gate.</p>
+<h3 id="workflow-step4">Step 4 — Specialist Agent Routing<a class="headerlink" href="#workflow-step4" title="Permanent link">&para;</a></h3>
+<p>The coordinator routes to one of four paths based on classified intent:</p>
+<ul>
+<li><strong>Claims agent</strong> — ReAct loop against Azure SQL (<code>Claims_Professional</code>, <code>Claims_Institutional</code>, <code>Member</code> tables).</li>
+<li><strong>Benefits agent</strong> — hybrid ReAct loop combining Azure SQL plan lookup with Azure AI Search semantic retrieval.</li>
+<li><strong>Appointment agent</strong> — eight-tool ReAct loop against <code>Provider_Slot_2</code>, <code>Appointment</code>, and <code>pre_auth</code> tables.</li>
+<li><strong>General responder</strong> — single LLM call, no tool use, lowest latency path.</li>
+<li><strong>HITL gate</strong> — graph terminates early, clarification question returned to caller, full state checkpointed to MongoDB.</li>
+</ul>
+<h3 id="workflow-step5">Step 5 — Data Layer<a class="headerlink" href="#workflow-step5" title="Permanent link">&para;</a></h3>
+<p>Each specialist agent issues parameterised queries to its designated backend. All Azure SQL access uses <code>pyodbc</code> wrapped in <code>run_in_executor</code> for async compatibility. Azure AI Search applies a <code>plan_id</code> filter on every search to prevent cross-plan data leakage.</p>
+<h3 id="workflow-step6">Step 6 — LLM Synthesis<a class="headerlink" href="#workflow-step6" title="Permanent link">&para;</a></h3>
+<p>Tool results are passed back to the agent's LLM, which synthesises a plain-English response. <code>_strip_markdown()</code> is applied to ensure TTS readability. The complete <code>CallWorkflowState</code> is then persisted to MongoDB Atlas under the caller's <code>thread_id</code>.</p>
+<h3 id="workflow-step7">Step 7 — TTS Response<a class="headerlink" href="#workflow-step7" title="Permanent link">&para;</a></h3>
+<p>The <code>InvokeResponse</code> object is serialised to JSON and returned as HTTP 200 OK. The channel layer converts the <code>answer</code> field to speech via the TTS engine. The <code>thread_id</code> is passed back to the caller for use in subsequent turns.</p>
+<h2 id="state-schema">State Schema Design<a class="headerlink" href="#state-schema" title="Permanent link">&para;</a></h2>
+<p>All data flowing through the graph is carried in a single Pydantic <code>TypedDict</code> subclass, <code>CallWorkflowState</code>. LangGraph merges partial state updates returned by each node into the running state object. No node receives anything except state — there are no side channels or global variables.</p>
+<h3 id="callworkflowstate">CallWorkflowState<a class="headerlink" href="#callworkflowstate" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>messages</code></td>
+<td><code>list[BaseMessage]</code></td>
+<td>Append-only conversation history. Uses <code>add_messages</code> reducer. Every node appends its <code>AIMessage</code> output.</td>
+</tr>
+<tr>
+<td><code>member_id</code></td>
+<td><code>Optional[str]</code></td>
+<td>Healthcare member identifier extracted by coordinator. Required for claims and benefits intents.</td>
+</tr>
+<tr>
+<td><code>plan_id</code></td>
+<td><code>Optional[str]</code></td>
+<td>Insurance plan identifier. Resolved by BenefitsAgent via <code>get_member_plan_id</code> tool.</td>
+</tr>
+<tr>
+<td><code>date_of_service</code></td>
+<td><code>Optional[str]</code></td>
+<td>Service date string. Used by ClaimsAgent to filter claim results.</td>
+</tr>
+<tr>
+<td><code>intent</code></td>
+<td><code>Optional[str]</code></td>
+<td>Classified intent: 'claims', 'benefits', 'appointment', 'general', or 'default'. Set by coordinator LLM call.</td>
+</tr>
+<tr>
+<td><code>clarification_needed</code></td>
+<td><code>bool</code></td>
+<td>True when intent requires <code>member_id</code> but none was provided. Triggers HITL pause.</td>
+</tr>
+<tr>
+<td><code>clarification_question</code></td>
+<td><code>Optional[str]</code></td>
+<td>Natural-language question to return to the caller when <code>clarification_needed</code> is True.</td>
+</tr>
+<tr>
+<td><code>agent_response</code></td>
+<td><code>Optional[str]</code></td>
+<td>Final plain-English answer. <code>_strip_markdown()</code> applied before storage.</td>
+</tr>
+<tr>
+<td><code>thread_id</code></td>
+<td><code>str</code></td>
+<td>UUID identifying the conversation thread. LangGraph checkpoint config key.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>Dict[str, Any]</code></td>
+<td>LangFuse trace IDs, channel identifiers, and operator-defined tags.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="coordinatoroutput">CoordinatorOutput<a class="headerlink" href="#coordinatoroutput" title="Permanent link">&para;</a></h3>
+<p><code>CoordinatorOutput</code> is a Pydantic <code>BaseModel</code> used as the structured output schema for the coordinator LLM call. Azure OpenAI is instructed to return JSON conforming to this schema.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>intent</code></td>
+<td>str — Classified intent. One of: claims, benefits, appointment, general, default.</td>
+</tr>
+<tr>
+<td><code>member_id</code></td>
+<td>str | null — Member ID extracted from utterance, or null if absent.</td>
+</tr>
+<tr>
+<td><code>plan_id</code></td>
+<td>str | null — Plan ID if mentioned, or null.</td>
+</tr>
+<tr>
+<td><code>date_of_service</code></td>
+<td>str | null — Date of service if mentioned, or null.</td>
+</tr>
+<tr>
+<td><code>clarification_needed</code></td>
+<td>bool — True if required data absent from utterance and state.</td>
+</tr>
+<tr>
+<td><code>clarification_question</code></td>
+<td>str | null — Question to ask the caller when <code>clarification_needed</code> is True.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="invokeresponse">InvokeResponse<a class="headerlink" href="#invokeresponse" title="Permanent link">&para;</a></h3>
+<p><code>InvokeResponse</code> is assembled by <code>CallWorkflow.invoke()</code> from the final <code>CallWorkflowState</code> once the graph terminates. It is serialised to JSON and returned to the FastAPI route handler.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>answer</code></td>
+<td>str — The <code>agent_response</code> or <code>clarification_question</code>. This is what the TTS engine speaks to the caller.</td>
+</tr>
+<tr>
+<td><code>thread_id</code></td>
+<td>str — The thread UUID. Must be passed back by the client on the next turn.</td>
+</tr>
+<tr>
+<td><code>intent</code></td>
+<td>str | null — The classified intent from this turn.</td>
+</tr>
+<tr>
+<td><code>clarification_needed</code></td>
+<td>bool — True if this response is a clarification request.</td>
+</tr>
+<tr>
+<td><code>clarification_question</code></td>
+<td>str | null — The clarification question text if applicable.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>dict — Pass-through of <code>state.metadata</code>, enriched with LangFuse trace data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="component-design">Component Design<a class="headerlink" href="#component-design" title="Permanent link">&para;</a></h2>
+<h3 id="coordinator-node">Coordinator Node<a class="headerlink" href="#coordinator-node" title="Permanent link">&para;</a></h3>
+<h4 id="coordinator-responsibilities">Responsibilities<a class="headerlink" href="#coordinator-responsibilities" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Issue a single structured LLM call (Azure OpenAI) with the full conversation history and an intent classification prompt.</li>
+<li>Parse the <code>CoordinatorOutput</code> JSON response and merge extracted fields into <code>CallWorkflowState</code>.</li>
+<li>Apply a safety net: if <code>intent == 'claims'</code> and <code>member_id</code> is absent, force <code>clarification_needed = True</code> regardless of LLM output.</li>
+<li>Return the updated state slice — LangGraph merges it into the running state.</li>
+</ul>
+<h4 id="coordinator-llm">LLM Call Details<a class="headerlink" href="#coordinator-llm" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model</td>
+<td>Azure OpenAI (<code>AZURE_OPENAI_ENDPOINT</code> + <code>OPENAI_API_KEY</code>)</td>
+</tr>
+<tr>
+<td>Prompt</td>
+<td><code>INTENT_PROMPT</code> system message + full <code>messages</code> history + injected variables: <code>message</code>, <code>history_summary</code>, <code>member_id</code>, <code>plan_id</code>, <code>date_of_service</code></td>
+</tr>
+<tr>
+<td>Output Format</td>
+<td>Structured JSON conforming to <code>CoordinatorOutput</code> schema. Enforced via function calling / JSON mode.</td>
+</tr>
+<tr>
+<td>Context Window</td>
+<td>Full <code>messages</code> list passed. <code>history_summary</code> compresses prior context for long conversations.</td>
+</tr>
+<tr>
+<td>Safety Net</td>
+<td>Post-LLM Python check: <code>intent='claims'</code> AND <code>member_id=None</code> → override <code>clarification_needed=True</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="claims-agent">Claims Agent<a class="headerlink" href="#claims-agent" title="Permanent link">&para;</a></h3>
+<p>ClaimsAgent is a LangChain ReAct agent with three Azure SQL tools. It runs an autonomous tool-use loop: it selects tools, inspects results, and continues until it has enough information to formulate a complete plain-English answer.</p>
+<h4 id="claims-tools">Tools<a class="headerlink" href="#claims-tools" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Backend</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query_member_info</code></td>
+<td>Azure SQL</td>
+<td><code>SELECT * FROM Member WHERE Member_ID=?</code> Returns member demographics JSON. Called first to validate member existence.</td>
+</tr>
+<tr>
+<td><code>query_claims</code></td>
+<td>Azure SQL</td>
+<td><code>SELECT</code> from <code>Claims_Professional</code> + <code>Claims_Institutional</code> filtered by <code>member_id</code> and optional <code>date_from</code>. Returns list of claims (max 20 records).</td>
+</tr>
+<tr>
+<td><code>query_preauth</code></td>
+<td>Azure SQL</td>
+<td><code>SELECT</code> preauthorisation records for member. Called when caller asks about pending approvals or preauth status.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="claims-context">Context Enrichment<a class="headerlink" href="#claims-context" title="Permanent link">&para;</a></h4>
+<p>Before entering the ReAct loop, the claims agent node prepends a context message to the <code>messages</code> list: <code>{Context: member_id, date_of_service}</code>. This ensures the LLM inside ClaimsAgent always has these identifiers available without re-parsing the conversation history.</p>
+<h4 id="claims-db">Database Connectivity<a class="headerlink" href="#claims-db" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Driver</td>
+<td><code>pyodbc</code> with SQL Server ODBC driver. Connection pooling managed at application level.</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>Parameterised via <code>AZURE_SQL_CONNECTION_STRING</code> environment variable.</td>
+</tr>
+<tr>
+<td>Execution</td>
+<td><code>run_in_executor</code> wraps synchronous <code>pyodbc</code> calls for async compatibility with LangGraph's asyncio loop.</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>All queries use parameterised placeholders (<code>?</code>). No string interpolation. Principle of least privilege on the DB service account.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="benefits-agent">Benefits Agent<a class="headerlink" href="#benefits-agent" title="Permanent link">&para;</a></h3>
+<p>BenefitsAgent is a LangChain ReAct agent with two tools covering Azure SQL for plan metadata and Azure AI Search for benefit document retrieval. This hybrid approach ensures both structured plan data and unstructured benefit content are available to the LLM.</p>
+<h4 id="benefits-tools">Tools<a class="headerlink" href="#benefits-tools" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Backend</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_member_plan_id</code></td>
+<td>Azure SQL</td>
+<td><code>SELECT Plan_ID, Plan_Type, Line_of_Business FROM Member WHERE Member_ID=?</code> Resolves the member's active plan.</td>
+</tr>
+<tr>
+<td><code>search_plan_benefits</code></td>
+<td>Azure AI Search</td>
+<td>Semantic or keyword search over the plan benefits corpus. Filtered by <code>plan_id</code>. Returns top-5 benefit document chunks with relevance scores.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="benefits-search">Search Index Configuration<a class="headerlink" href="#benefits-search" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Index Name</td>
+<td>Configured via <code>AZURE_SEARCH_INDEX_NAME</code> environment variable.</td>
+</tr>
+<tr>
+<td>Search Type</td>
+<td>Hybrid (keyword + vector semantic re-rank) for maximum recall on natural-language benefit queries.</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td><code>plan_id</code> filter applied on every search to prevent cross-plan data leakage.</td>
+</tr>
+<tr>
+<td>Result Count</td>
+<td>Top-5 chunks returned. Each chunk carries content text and relevance score.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="appointment-agent">Appointment Scheduler Agent<a class="headerlink" href="#appointment-agent" title="Permanent link">&para;</a></h3>
+<p>AppointmentSchedulerAgent is a LangChain ReAct agent with eight specialised tools covering appointment lifecycle management. It enables members to view, book, reschedule, and cancel appointments while respecting pre-authorization constraints and provider availability windows.</p>
+<p>The agent handles:</p>
+<ul>
+<li><strong>Availability queries</strong> — search by date, date range, provider, or time-of-day preference.</li>
+<li><strong>Booking operations</strong> — create appointments with authorization validation and one-active-appointment-per-member enforcement.</li>
+<li><strong>Modifications</strong> — reschedule or cancel existing appointments with atomic slot updates.</li>
+<li><strong>Smart suggestions</strong> — recommend alternatives when requested slots are unavailable.</li>
+</ul>
+<h4 id="appt-tools">Tools<a class="headerlink" href="#appt-tools" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Backend</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_available_slots</code></td>
+<td><code>Provider_Slot_2</code></td>
+<td>Fetch available slots for a date, filtered by <code>provider_name</code> and <code>time_of_day</code>. Returns up to 20 slots.</td>
+</tr>
+<tr>
+<td><code>validate_appointment_slot</code></td>
+<td><code>Provider_Slot_2</code></td>
+<td>Verify a specific date+time slot is available before booking. Returns <code>slot_id</code>, provider info, availability status.</td>
+</tr>
+<tr>
+<td><code>book_appointment</code></td>
+<td><code>Appointment</code> + <code>Provider_Slot_2</code></td>
+<td>Create <code>Appointment</code> record + set <code>Is_Booked=1</code>. Validates pre-auth. Enforces one-active-appointment constraint. Returns <code>appointment_id</code> or alternatives.</td>
+</tr>
+<tr>
+<td><code>reschedule_appointment</code></td>
+<td><code>Appointment</code> + <code>Provider_Slot_2</code></td>
+<td>Atomically release old slot, book new slot, update <code>Appointment</code> record. Validates new availability before committing.</td>
+</tr>
+<tr>
+<td><code>cancel_appointment</code></td>
+<td><code>Appointment</code> + <code>Provider_Slot_2</code></td>
+<td>Set <code>Appointment.Status='Cancelled'</code> and release <code>Provider_Slot_2.Is_Booked=0</code>. Frees slot for future bookings.</td>
+</tr>
+<tr>
+<td><code>get_slots_for_range</code></td>
+<td><code>Provider_Slot_2</code></td>
+<td>Fetch available slots across a date range. Supports 'next 5 days', 'this week', date range expressions.</td>
+</tr>
+<tr>
+<td><code>get_earliest_available_slot</code></td>
+<td><code>Provider_Slot_2</code></td>
+<td>Find single earliest available slot from today or a given start date.</td>
+</tr>
+<tr>
+<td><code>get_member_appointments</code></td>
+<td><code>Appointment</code></td>
+<td>Retrieve all upcoming scheduled appointments for a member with full details.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="appt-schema">Database Schema<a class="headerlink" href="#appt-schema" title="Permanent link">&para;</a></h4>
+<p><strong><code>Provider_Slot_2</code> Table</strong> — Available appointment slots</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Slot_ID</code></td>
+<td>UUID</td>
+<td>Primary key. Unique slot identifier.</td>
+</tr>
+<tr>
+<td><code>Provider_Name</code></td>
+<td>VARCHAR(255)</td>
+<td>Matched against <code>pre_auth.Provider_Name</code>.</td>
+</tr>
+<tr>
+<td><code>Date</code></td>
+<td>DATETIME</td>
+<td>Queried with <code>CAST(Date AS DATE)</code> for comparison.</td>
+</tr>
+<tr>
+<td><code>Start_Time</code></td>
+<td>VARCHAR(10)</td>
+<td>12-hour format e.g. '06:00 PM'. Filtered by <code>time_of_day</code> range.</td>
+</tr>
+<tr>
+<td><code>Is_Booked</code></td>
+<td>BIT</td>
+<td>0=available, 1=booked, NULL=available. Updated atomically by book/cancel tools.</td>
+</tr>
+<tr>
+<td><code>Appointment_ID</code></td>
+<td>VARCHAR(20)</td>
+<td>NULL if unbooked. Set by <code>book_appointment</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>Appointment</code> Table</strong> — Booked member appointments</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Appointment_ID</code></td>
+<td>VARCHAR(20)</td>
+<td>Primary key e.g. 'APTU1A2B3C4D5'. Returned as booking confirmation.</td>
+</tr>
+<tr>
+<td><code>Member_ID</code></td>
+<td>VARCHAR(20)</td>
+<td>Foreign key to <code>Member</code> table.</td>
+</tr>
+<tr>
+<td><code>Status</code></td>
+<td>VARCHAR(20)</td>
+<td>Scheduled or Cancelled.</td>
+</tr>
+<tr>
+<td><code>Appointment_booking_timestamp</code></td>
+<td>FLOAT</td>
+<td>Unix timestamp. Audit trail for HIPAA compliance.</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>pre_auth</code> Table</strong> — Pre-authorization constraints</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Member_ID</code></td>
+<td>Constrains which provider a member may book with.</td>
+</tr>
+<tr>
+<td><code>Provider_Name</code></td>
+<td>Authorized provider. Matched against <code>Provider_Slot_2.Provider_Name</code>.</td>
+</tr>
+<tr>
+<td><code>Status</code></td>
+<td>Approved / In Review = booking permitted. Expired = blocked.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="appt-nl">Natural Language Support<a class="headerlink" href="#appt-nl" title="Permanent link">&para;</a></h4>
+<p>The appointment tools parse natural-language date and time expressions before issuing SQL queries. All parsing is performed client-side to prevent injection.</p>
+<table>
+<thead>
+<tr>
+<th>Input Type</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keywords</td>
+<td>'today', 'tomorrow', 'next Monday', 'this weekend', 'end of month'</td>
+</tr>
+<tr>
+<td>Explicit dates</td>
+<td>'29 June 2026', '2026-06-29', '6/29/2026'</td>
+</tr>
+<tr>
+<td>Date ranges</td>
+<td>'next 5 days', 'this week', 'between June 1 and June 5'</td>
+</tr>
+<tr>
+<td>Time periods</td>
+<td>'morning' (06:00–11:59), 'afternoon' (12:00–16:59), 'evening' (17:00–20:59)</td>
+</tr>
+<tr>
+<td>Explicit times</td>
+<td>'6 PM', '18:00', '6:00 PM' — normalised via <code>_format_time()</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="general-responder">General Responder<a class="headerlink" href="#general-responder" title="Permanent link">&para;</a></h3>
+<p>The general responder handles all non-claims, non-benefits, non-appointment intents. It makes a single LLM call — no tool use — and is optimised for low latency and concise output.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLM Call</td>
+<td>Single <code>ainvoke()</code> with <code>GENERAL_PROMPT</code> system message.</td>
+</tr>
+<tr>
+<td>Variables</td>
+<td><code>message</code> (current utterance), <code>history_summary</code> (compressed prior turns).</td>
+</tr>
+<tr>
+<td>Output Format</td>
+<td>Plain English. 1-2 sentences maximum. No markdown. <code>_strip_markdown()</code> applied post-generation.</td>
+</tr>
+<tr>
+<td>Intent Routing</td>
+<td>Receives all <code>intent='general'</code> and <code>intent='default'</code> traffic from coordinator.</td>
+</tr>
+<tr>
+<td>No HITL Gate</td>
+<td>General intent never triggers <code>clarification_needed</code>. No member identifiers required.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hitl-design">Human-in-the-Loop (HITL)<a class="headerlink" href="#hitl-design" title="Permanent link">&para;</a></h2>
+<p>HITL in this system refers to the pattern where the AI workflow pauses mid-execution to request additional information from the human caller. It is not a human agent takeover — it is a structured clarification request that allows the graph to resume with complete data on the next conversational turn.</p>
+<h3 id="hitl-triggers">Trigger Conditions<a class="headerlink" href="#hitl-triggers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Missing <code>member_id</code> for claims intent</td>
+<td>Coordinator classifies <code>intent='claims'</code> but <code>member_id</code> is absent from both the current utterance and existing state. Safety net forces <code>clarification_needed=True</code>.</td>
+</tr>
+<tr>
+<td>LLM-detected ambiguity</td>
+<td>Coordinator LLM may set <code>clarification_needed=True</code> with a specific question for any intent where key data cannot be inferred.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hitl-flow">Turn-by-Turn Flow<a class="headerlink" href="#hitl-flow" title="Permanent link">&para;</a></h3>
+<h4 id="hitl-turn1">Turn 1 — Missing Information<a class="headerlink" href="#hitl-turn1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Caller sends <code>POST /workflows/call_workflow</code> with question: 'What is my claim status?' — no <code>member_id</code> provided.</li>
+<li><code>CallWorkflow.invoke()</code> calls <code>compile()</code> → retrieves/builds <code>CompiledGraph</code>.</li>
+<li>LangGraph <code>ainvoke(initial_state)</code> — coordinator node fires.</li>
+<li>LLM returns <code>CoordinatorOutput</code>: <code>{intent:'claims', member_id:null, clarification_needed:true, clarification_question:'Could you provide your Member ID?'}</code>.</li>
+<li>Python safety net confirms: <code>intent=claims</code> and <code>member_id=None</code> → <code>clarification_needed</code> forced True.</li>
+<li><code>_coordinator_route</code> returns <code>'__end__'</code>. Graph terminates early — no specialist agent is invoked.</li>
+<li>LangGraph saves checkpoint to MongoDB with the generated <code>thread_id</code>.</li>
+<li><code>CallWorkflow</code> assembles <code>InvokeResponse</code>: <code>answer='Could you provide your Member ID?'</code>, <code>clarification_needed=True</code>, <code>thread_id='uuid-xyz'</code>.</li>
+<li>FastAPI returns 200 OK. TTS speaks clarification question to caller.</li>
+</ol>
+<h4 id="hitl-turn2">Turn 2 — Data Provided<a class="headerlink" href="#hitl-turn2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Caller sends <code>POST /workflows/call_workflow</code> with question: 'My ID is M123', <code>thread_id: 'uuid-xyz'</code>.</li>
+<li>LangGraph restores prior checkpoint for <code>thread_id='uuid-xyz'</code> — full message history intact.</li>
+<li>Coordinator re-fires with enriched state (<code>member_id='M123'</code> now present in messages).</li>
+<li>LLM returns: <code>{intent:'claims', member_id:'M123', clarification_needed:false}</code>.</li>
+<li>Safety net passes — <code>member_id</code> is present. <code>_coordinator_route</code> returns <code>'claims_agent'</code>.</li>
+<li>ClaimsAgent executes ReAct loop, queries Azure SQL, returns claim status.</li>
+<li>Graph terminates normally. Full <code>InvokeResponse</code> returned. <code>thread_id</code> preserved for further turns.</li>
+</ol>
+<h3 id="hitl-state">State Preservation<a class="headerlink" href="#hitl-state" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Checkpoint Architecture</p>
+<p>The <code>MongoDBSaver</code> stores a full serialised snapshot of <code>CallWorkflowState</code> (including all messages) keyed by <code>thread_id</code>. When LangGraph resumes with the same <code>thread_id</code>, it deserialises the prior state before invoking any node. This means the coordinator on Turn 2 sees the complete conversation history from Turn 1 — enabling coherent multi-turn reasoning without any client-side state management.</p>
+</div>
+<h2 id="persistence">Persistence and Checkpointing<a class="headerlink" href="#persistence" title="Permanent link">&para;</a></h2>
+<h3 id="mongodb-checkpointer">MongoDB Checkpointer<a class="headerlink" href="#mongodb-checkpointer" title="Permanent link">&para;</a></h3>
+<p>The <code>MongoDBSaver</code> is the primary persistence backend, providing durable cross-request state for all HITL scenarios and multi-turn conversations.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database</td>
+<td><code>directline_db</code></td>
+<td>Dedicated database for call workflow state.</td>
+</tr>
+<tr>
+<td>Collection 1</td>
+<td><code>langgraph_checkpoints</code></td>
+<td>Stores complete serialised <code>CallWorkflowState</code> snapshot per <code>thread_id</code> and checkpoint version.</td>
+</tr>
+<tr>
+<td>Collection 2</td>
+<td><code>langgraph_checkpoint_writes</code></td>
+<td>Stores incremental write operations between full checkpoints. Enables efficient partial state recovery.</td>
+</tr>
+<tr>
+<td>Connection Timeout</td>
+<td>5 seconds</td>
+<td><code>MongoClient</code> constructor timeout. Prevents startup blocking on unavailable MongoDB.</td>
+</tr>
+<tr>
+<td>Connection String</td>
+<td><code>MONGODB_URL</code> env var</td>
+<td>Injected at runtime. Supports MongoDB Atlas or self-hosted deployments.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="memorysaver">MemorySaver Fallback<a class="headerlink" href="#memorysaver" title="Permanent link">&para;</a></h3>
+<p>If <code>MongoClient</code> fails to connect within 5 seconds, <code>CallWorkflow</code> falls back to LangGraph's built-in <code>MemorySaver</code>. <code>MemorySaver</code> stores checkpoints in process memory — state is not durable across application restarts, but the service continues to function for single-session interactions.</p>
+<h3 id="thread-id">Thread ID Management<a class="headerlink" href="#thread-id" title="Permanent link">&para;</a></h3>
+<p>The <code>thread_id</code> is a UUID generated on the first invocation of a new conversation. It is:</p>
+<ul>
+<li>Returned to the caller in every <code>InvokeResponse</code>.</li>
+<li>Passed back by the client in subsequent requests to the same conversation.</li>
+<li>Used as the LangGraph config key (<code>config={'configurable': {'thread_id': thread_id}}</code>) to select the correct checkpoint.</li>
+<li>Scoped to a single member contact session — a new call generates a new <code>thread_id</code>.</li>
+</ul>
+<h2 id="walkthroughs">Intent Flow Walkthroughs<a class="headerlink" href="#walkthroughs" title="Permanent link">&para;</a></h2>
+<h3 id="walk-general">General Intent — Greeting<a class="headerlink" href="#walk-general" title="Permanent link">&para;</a></h3>
+<p>This is the simplest and fastest path through the graph. It demonstrates the baseline routing logic.</p>
+<ol>
+<li><strong>Client invokes with question: "Hello, how can you help me?"</strong><ul>
+<li><em>LangGraph <code>ainvoke(initial_state)</code> triggered.</em></li>
+</ul>
+</li>
+<li><strong>LLM classifies <code>{intent:'general', clarification_needed:false}</code></strong><ul>
+<li><em><code>_coordinator_route</code> evaluates → returns <code>'general_responder'</code>.</em></li>
+</ul>
+</li>
+<li><strong>Single LLM call with <code>GENERAL_PROMPT</code> — 1-2 sentence reply</strong><ul>
+<li><em><code>_strip_markdown(answer)</code> called. No tools, no database queries.</em></li>
+</ul>
+</li>
+<li><strong><code>InvokeResponse</code> assembled and returned to caller</strong><ul>
+<li><em>Lowest latency path in the graph. No HITL gate required.</em></li>
+</ul>
+</li>
+</ol>
+<h3 id="walk-benefits">Benefits Intent — Coverage Enquiry<a class="headerlink" href="#walk-benefits" title="Permanent link">&para;</a></h3>
+<p>Example: Caller asks 'Is acupuncture covered?' with <code>member_id='M456'</code> pre-populated.</p>
+<ol>
+<li><strong>Coordinator LLM: <code>{intent:'benefits', member_id:'M456', clarification_needed:false}</code></strong><ul>
+<li><em><code>_coordinator_route</code> → <code>'benefits_agent'</code>.</em></li>
+</ul>
+</li>
+<li><strong>ReAct iteration 1: <code>get_member_plan_id</code> → Azure SQL</strong><ul>
+<li><em>Returns <code>{plan_id:'PLN-001', plan_type:'PPO', ...}</code>.</em></li>
+</ul>
+</li>
+<li><strong>ReAct iteration 2: <code>search_plan_benefits</code> → Azure AI Search</strong><ul>
+<li><em>Filter <code>plan_id='PLN-001'</code> → returns top-5 benefit chunks with relevance scores.</em></li>
+</ul>
+</li>
+<li><strong>LLM synthesises plain-English answer. State updated. 200 OK.</strong></li>
+</ol>
+<h3 id="walk-claims">Claims Intent — Happy Path<a class="headerlink" href="#walk-claims" title="Permanent link">&para;</a></h3>
+<p>Example: Caller provides <code>member_id='M123'</code> upfront. Intent classified as claims. All required data present — no HITL required.</p>
+<ol>
+<li><strong><code>POST /workflows/call_workflow</code> with question, <code>member_id='M123'</code>, <code>thread_id</code></strong><ul>
+<li><em><code>compile()</code> called — first call only: <code>MongoDBSaver</code> connected, <code>StateGraph</code> assembled, compiled, cached.</em></li>
+</ul>
+</li>
+<li><strong>Coordinator LLM: <code>{intent:'claims', member_id:'M123', clarification_needed:false}</code></strong><ul>
+<li><em>Safety net passes. <code>_coordinator_route</code> returns <code>'claims_agent'</code>.</em></li>
+</ul>
+</li>
+<li><strong>ReAct: <code>query_member_info</code> → Azure SQL: <code>SELECT * FROM Member WHERE Member_ID=?</code></strong></li>
+<li><strong>ReAct: <code>query_claims</code> → <code>Claims_Professional</code> + <code>Claims_Institutional</code> (max 20 records)</strong></li>
+<li><strong>LLM synthesises plain-English answer. MongoDB checkpoint saved.</strong><ul>
+<li><em>FastAPI returns 200 OK with <code>{answer, thread_id, intent:'claims', clarification_needed:false}</code>.</em></li>
+</ul>
+</li>
+</ol>
+<h3 id="walk-appointment">Appointment Intent — Booking<a class="headerlink" href="#walk-appointment" title="Permanent link">&para;</a></h3>
+<p>Example: Caller asks 'I'd like to book an appointment for next Tuesday afternoon.' with <code>member_id='M456'</code>.</p>
+<ol>
+<li><strong>Coordinator LLM: <code>{intent:'appointment', member_id:'M456', clarification_needed:false}</code></strong><ul>
+<li><em><code>_coordinator_route</code> returns <code>'appointment_agent'</code>. Context prepended: <code>[Member ID: M456, Member Name: Jane Smith]</code>.</em></li>
+</ul>
+</li>
+<li><strong>ReAct 1: <code>get_slots_for_range('next 5 days', time_of_day='afternoon')</code></strong><ul>
+<li><em>Queries <code>pre_auth</code> → finds authorized provider 'Dr. Smith'. Filters <code>Provider_Slot_2</code> for afternoon slots. Returns: Tuesday 6/17 at 2 PM and 3 PM, Wednesday 6/18 at 1 PM.</em></li>
+</ul>
+</li>
+<li><strong>LLM presents options to caller</strong><ul>
+<li><em>'I found afternoon availability for you next Tuesday at 2 PM and 3 PM, or Wednesday at 1 PM. Which would work best for you?'</em></li>
+</ul>
+</li>
+<li><strong>ReAct 2: <code>validate_appointment_slot('2026-06-17', '2 PM', 'Dr. Smith')</code></strong><ul>
+<li><em>Returns: <code>{available: true, slot_id: 'SLT-xyz'}</code>.</em></li>
+</ul>
+</li>
+<li><strong>ReAct 3: <code>book_appointment(member_id='M456', date='2026-06-17', time='2 PM')</code></strong><ul>
+<li><em>INSERTs <code>Appointment</code> record (ID: APTU1A2B3C). UPDATEs <code>Provider_Slot_2.Is_Booked=1</code>.</em></li>
+</ul>
+</li>
+<li><strong>LLM confirms booking. MongoDB checkpoint saved. 200 OK.</strong><ul>
+<li><em>'Your appointment with Dr. Smith is booked for Tuesday, 17 June 2026 at 2:00 PM. Appointment ID: APTU1A2B3C.'</em></li>
+</ul>
+</li>
+</ol>
+<h2 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h2>
+<h3 id="api-endpoint">Endpoint<a class="headerlink" href="#api-endpoint" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Path</td>
+<td><code>POST /workflows/call_workflow</code></td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>Bearer token (Azure AD JWT) — validated by FastAPI dependency injection.</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td><code>application/json</code></td>
+</tr>
+<tr>
+<td>Idempotency</td>
+<td>Not idempotent. Each POST creates a new graph invocation or continues an existing thread.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api-request">Request Body<a class="headerlink" href="#api-request" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>question</code></td>
+<td>string</td>
+<td>✅ Yes</td>
+<td>The caller's utterance for this turn.</td>
+</tr>
+<tr>
+<td><code>member_id</code></td>
+<td>string</td>
+<td>No</td>
+<td>Pre-populated member ID from channel integration (CRM lookup).</td>
+</tr>
+<tr>
+<td><code>thread_id</code></td>
+<td>string</td>
+<td>No</td>
+<td>UUID of existing conversation thread. Null or absent = new conversation.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>object</td>
+<td>No</td>
+<td>Arbitrary key-value pairs. Passed through to <code>InvokeResponse.metadata</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api-response">Response Body<a class="headerlink" href="#api-response" title="Permanent link">&para;</a></h3>
+<p>Returns <code>InvokeResponse</code> serialised as JSON. HTTP 200 on success.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;answer&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Your claim #CL-9981 was approved on June 1, 2026 for $240.00.&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;thread_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;550e8400-e29b-41d4-a716-446655440000&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;intent&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;claims&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;clarification_needed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;clarification_question&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="api-errors">Error Handling<a class="headerlink" href="#api-errors" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400 Bad Request</td>
+<td>Missing required field <code>question</code>. Response includes field-level validation error from Pydantic.</td>
+</tr>
+<tr>
+<td>401 Unauthorized</td>
+<td>Invalid or expired Azure AD JWT. Re-authenticate and retry.</td>
+</tr>
+<tr>
+<td>422 Unprocessable</td>
+<td>Request body schema violation (Pydantic validation failure on non-required fields).</td>
+</tr>
+<tr>
+<td>500 Internal Error</td>
+<td>Unhandled exception in graph execution. Full stack trace logged to Application Insights.</td>
+</tr>
+<tr>
+<td>503 Unavailable</td>
+<td>LangGraph or Azure OpenAI unavailable. Caller should retry with exponential backoff.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="infrastructure">Infrastructure and Integrations<a class="headerlink" href="#infrastructure" title="Permanent link">&para;</a></h2>
+<h3 id="azure-services">Azure Services<a class="headerlink" href="#azure-services" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>SKU/Variant</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Azure OpenAI</td>
+<td>GPT-5.4-mini</td>
+<td>All LLM calls — coordinator, ClaimsAgent, BenefitsAgent, AppointmentSchedulerAgent, GeneralResponder.</td>
+</tr>
+<tr>
+<td>Azure SQL Database</td>
+<td>SQL Server</td>
+<td><code>Member</code>, <code>Claims_Professional</code>, <code>Claims_Institutional</code>, <code>pre_auth</code>, <code>Provider_Slot_2</code>, <code>Appointment</code> tables. Accessed via <code>pyodbc</code>.</td>
+</tr>
+<tr>
+<td>Azure AI Search</td>
+<td>Semantic + Keyword</td>
+<td>Plan benefits corpus. Filtered by <code>plan_id</code>. Top-k chunks with relevance scores.</td>
+</tr>
+<tr>
+<td>Azure Kubernetes Service</td>
+<td>AKS</td>
+<td>Container orchestration for FastAPI pods. HPA configured for CPU and request-rate metrics.</td>
+</tr>
+<tr>
+<td>Azure API Management</td>
+<td>APIM</td>
+<td>Unified API gateway. JWT validation, rate limiting, throttling, and request logging.</td>
+</tr>
+<tr>
+<td>Azure Monitor</td>
+<td>Log Analytics + App Insights</td>
+<td>Structured logging, custom metrics, intent distribution, and HITL rate tracking.</td>
+</tr>
+<tr>
+<td>MongoDB Atlas</td>
+<td>MongoDB 7.x</td>
+<td>LangGraph checkpoint storage. Collections: <code>langgraph_checkpoints</code>, <code>langgraph_checkpoint_writes</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="langfuse">LangFuse Observability<a class="headerlink" href="#langfuse" title="Permanent link">&para;</a></h3>
+<p>LangFuse provides LLM-native observability: per-call trace spans with token usage, latency, model parameters, and cost. It is enabled via the <code>LANGFUSE_ENABLED</code> environment variable. When active, each graph invocation creates a root trace; coordinator and agent nodes create child spans. Traces are queryable by <code>thread_id</code>, <code>intent</code>, and <code>member_id</code>.</p>
+<h3 id="env-vars">Environment Variables<a class="headerlink" href="#env-vars" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AZURE_OPENAI_ENDPOINT</code></td>
+<td>Azure OpenAI resource endpoint URL.</td>
+</tr>
+<tr>
+<td><code>OPENAI_API_KEY</code></td>
+<td>Azure OpenAI API key.</td>
+</tr>
+<tr>
+<td><code>AZURE_SQL_CONNECTION_STRING</code></td>
+<td><code>pyodbc</code> connection string for Azure SQL.</td>
+</tr>
+<tr>
+<td><code>AZURE_SEARCH_ENDPOINT</code></td>
+<td>Azure AI Search service endpoint URL.</td>
+</tr>
+<tr>
+<td><code>AZURE_SEARCH_KEY</code></td>
+<td>Azure AI Search admin or query key.</td>
+</tr>
+<tr>
+<td><code>AZURE_SEARCH_INDEX_NAME</code></td>
+<td>Name of the benefits document search index.</td>
+</tr>
+<tr>
+<td><code>MONGODB_URL</code></td>
+<td>MongoDB connection string (Atlas or self-hosted).</td>
+</tr>
+<tr>
+<td><code>LANGFUSE_ENABLED</code></td>
+<td>Boolean flag (true/false). Enables LangFuse tracing when true.</td>
+</tr>
+<tr>
+<td><code>LANGFUSE_PUBLIC_KEY</code></td>
+<td>LangFuse project public key (required when <code>LANGFUSE_ENABLED=true</code>).</td>
+</tr>
+<tr>
+<td><code>LANGFUSE_SECRET_KEY</code></td>
+<td>LangFuse project secret key (required when <code>LANGFUSE_ENABLED=true</code>).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="security">Security and Compliance<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<h3 id="auth">Authentication and Authorisation<a class="headerlink" href="#auth" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All API requests require a valid Azure AD Bearer JWT validated by FastAPI middleware.</li>
+<li>Azure Managed Identity used for all service-to-service calls (OpenAI, Azure SQL, AI Search) — no secrets in application code.</li>
+<li>Azure Key Vault stores all connection strings and API keys. Environment variables inject values at pod startup.</li>
+<li>RBAC enforced at the Azure resource level: AKS pods hold Reader access to Key Vault secrets only.</li>
+</ul>
+<h3 id="data-protection">Data Protection<a class="headerlink" href="#data-protection" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>PHI Detection:</strong> All LLM responses pass through a PHI masking pipeline before storage. Member IDs, dates of birth, and clinical data are redacted in logs.</li>
+<li><strong>Encryption in Transit:</strong> All inter-service communication uses TLS 1.3. MongoDB Atlas and Azure SQL use encrypted connections.</li>
+<li><strong>Encryption at Rest:</strong> Azure SQL and MongoDB Atlas enable transparent data encryption (TDE/AES-256) by default.</li>
+<li><strong>Parameterised Queries:</strong> All Azure SQL tool calls use <code>pyodbc</code> parameterised queries. No string interpolation of member-supplied data.</li>
+</ul>
+<h3 id="hipaa">HIPAA Alignment<a class="headerlink" href="#hipaa" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access Controls</td>
+<td>Azure AD authentication + RBAC on all data stores. No anonymous access permitted.</td>
+</tr>
+<tr>
+<td>Audit Logging</td>
+<td>All graph invocations logged with <code>thread_id</code>, <code>intent</code>, <code>member_id</code> (hashed), and timestamp to Azure Monitor.</td>
+</tr>
+<tr>
+<td>Data Minimisation</td>
+<td>LLM prompts inject only the minimum required member data. Full demographics not sent to OpenAI unless explicitly required.</td>
+</tr>
+<tr>
+<td>PHI in Checkpoints</td>
+<td>MongoDB Atlas field-level encryption can be enabled for additional compliance.</td>
+</tr>
+<tr>
+<td>Retention</td>
+<td>Checkpoint TTL configurable per organisation policy. Default: 30-day retention with automated deletion.</td>
+</tr>
+<tr>
+<td>Business Associate Agreement</td>
+<td>Azure OpenAI, Azure SQL, MongoDB Atlas — all covered under BAA with healthcare organisations where applicable.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="deployment">Deployment Design<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<h3 id="container-arch">Container Architecture<a class="headerlink" href="#container-arch" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The FastAPI application is packaged as a Docker image and deployed to Azure Kubernetes Service (AKS).</li>
+<li>LangGraph and all dependencies are installed in the image at build time.</li>
+<li>Graph compilation happens lazily on first request — no pre-warm startup cost.</li>
+<li>Horizontal Pod Autoscaler (HPA) scales pods based on CPU utilisation (target 70%) and concurrent request count.</li>
+</ul>
+<h3 id="deploy-config">Deployment Configuration<a class="headerlink" href="#deploy-config" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum Replicas</td>
+<td>2 (high availability across availability zones)</td>
+</tr>
+<tr>
+<td>Maximum Replicas</td>
+<td>20 (configurable per environment)</td>
+</tr>
+<tr>
+<td>CPU Request</td>
+<td>500m per pod</td>
+</tr>
+<tr>
+<td>CPU Limit</td>
+<td>2000m per pod</td>
+</tr>
+<tr>
+<td>Memory Request</td>
+<td>1Gi per pod</td>
+</tr>
+<tr>
+<td>Memory Limit</td>
+<td>4Gi per pod</td>
+</tr>
+<tr>
+<td>Liveness Probe</td>
+<td><code>GET /health</code> — 30s initial delay, 10s period</td>
+</tr>
+<tr>
+<td>Readiness Probe</td>
+<td><code>GET /health</code> — 10s initial delay, 5s period</td>
+</tr>
+</tbody>
+</table>
+<h2 id="observability">Observability and Monitoring<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h2>
+<p>All application logs are emitted as structured JSON to stdout, captured by AKS, and forwarded to Azure Log Analytics workspace. Log levels: DEBUG (dev), INFO (staging/prod), WARNING (HITL/fallback events), ERROR (exceptions).</p>
+<h3 id="metrics">Key Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>graph_invocation_count</code></td>
+<td>Counter</td>
+<td>Total call workflow invocations per time period.</td>
+</tr>
+<tr>
+<td><code>graph_intent_distribution</code></td>
+<td>Histogram</td>
+<td>Breakdown by intent: claims, benefits, appointment, general, default.</td>
+</tr>
+<tr>
+<td><code>graph_execution_duration_ms</code></td>
+<td>Histogram</td>
+<td>End-to-end graph execution time. P50, P95, P99.</td>
+</tr>
+<tr>
+<td><code>hitl_trigger_rate</code></td>
+<td>Gauge</td>
+<td>Percentage of invocations that trigger HITL. Alerting threshold: &gt;30%.</td>
+</tr>
+<tr>
+<td><code>llm_token_usage</code></td>
+<td>Counter</td>
+<td>Total input + output tokens per model per intent. Cost tracking.</td>
+</tr>
+<tr>
+<td><code>mongodb_checkpoint_errors</code></td>
+<td>Counter</td>
+<td>Number of MongoDB connection failures. Triggers MemorySaver fallback alert.</td>
+</tr>
+<tr>
+<td><code>claims_agent_tool_calls</code></td>
+<td>Histogram</td>
+<td>Number of tool calls per ClaimsAgent invocation. P95 &gt; 5 = review prompt.</td>
+</tr>
+<tr>
+<td><code>azure_sql_query_duration_ms</code></td>
+<td>Histogram</td>
+<td>SQL query execution time. P95 &gt; 500ms triggers review.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="alerting">Alerting<a class="headerlink" href="#alerting" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Alert</th>
+<th>Severity</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P95 latency &gt; 5s</td>
+<td>🔴 High</td>
+<td>LLM or SQL performance degradation. Check Azure OpenAI throttling and SQL query plans.</td>
+</tr>
+<tr>
+<td>HITL rate &gt; 30%</td>
+<td>🟡 Medium</td>
+<td>Coordinator prompt may need tuning. Review intent classification accuracy.</td>
+</tr>
+<tr>
+<td>MongoDB fallback active</td>
+<td>🔴 High</td>
+<td>MongoDB unavailable. Multi-turn HITL reliability degraded. Escalate to infrastructure.</td>
+</tr>
+<tr>
+<td>Error rate &gt; 1%</td>
+<td>🔴 High</td>
+<td>Unhandled exceptions in graph execution. Review Application Insights exceptions.</td>
+</tr>
+<tr>
+<td>LLM token budget exceeded</td>
+<td>🟡 Medium</td>
+<td>Review prompt lengths and compress <code>history_summary</code> more aggressively.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-flow">Data Flow Reference<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
+<h3 id="claims-data-flow">Claims Intent — Full Data Flow<a class="headerlink" href="#claims-data-flow" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Data Transformation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. HTTP POST arrives</td>
+<td>Payload: <code>{question, member_id, thread_id, metadata}</code> → FastAPI validates schema → passes to <code>CallWorkflow.invoke()</code>.</td>
+</tr>
+<tr>
+<td>2. Graph compilation</td>
+<td>First call only: <code>StateGraph</code> compiled, <code>MongoDBSaver</code> connected. Subsequent calls return cached <code>CompiledGraph</code>.</td>
+</tr>
+<tr>
+<td>3. Checkpoint restore</td>
+<td>If <code>thread_id</code> provided: LangGraph restores prior <code>CallWorkflowState</code> from MongoDB. Messages history intact.</td>
+</tr>
+<tr>
+<td>4. Coordinator LLM call</td>
+<td><code>INTENT_PROMPT</code> + full messages → Azure OpenAI → <code>CoordinatorOutput</code> JSON → state updated.</td>
+</tr>
+<tr>
+<td>5. Safety net check</td>
+<td><code>intent=claims</code> AND <code>member_id</code> present → safety net passes → <code>_coordinator_route</code> returns <code>'claims_agent'</code>.</td>
+</tr>
+<tr>
+<td>6. Context prepend</td>
+<td>ClaimsAgent node prepends <code>{Context: member_id, date_of_service}</code> to messages.</td>
+</tr>
+<tr>
+<td>7. <code>query_member_info</code></td>
+<td>ToolCall → <code>pyodbc</code> → Azure SQL: <code>SELECT * FROM Member WHERE Member_ID=?</code></td>
+</tr>
+<tr>
+<td>8. <code>query_claims</code></td>
+<td>ToolCall → <code>pyodbc</code> → Azure SQL: <code>SELECT</code> from <code>Claims_Professional</code> + <code>Claims_Institutional</code> (max 20).</td>
+</tr>
+<tr>
+<td>9. Final LLM synthesis</td>
+<td>ReAct loop terminates. LLM synthesises plain-English answer. <code>_strip_markdown()</code> applied.</td>
+</tr>
+<tr>
+<td>10. Checkpoint save</td>
+<td>MongoDB: full final state saved under <code>thread_id</code>.</td>
+</tr>
+<tr>
+<td>11. <code>InvokeResponse</code> assembled</td>
+<td><code>answer</code>, <code>thread_id</code>, <code>intent='claims'</code>, <code>clarification_needed=false</code> → JSON → FastAPI → 200 OK.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hitl-data-flow">HITL Data Flow<a class="headerlink" href="#hitl-data-flow" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turn 1 — In</td>
+<td>POST: <code>{question:'What is my claim status?'}</code> — no <code>member_id</code>.</td>
+</tr>
+<tr>
+<td>Turn 1 — Out</td>
+<td>LangGraph: <code>clarification_needed=true</code> → graph routes to <code>__end__</code> → MongoDB saves checkpoint with <code>thread_id='uuid-xyz'</code>.</td>
+</tr>
+<tr>
+<td>Turn 1 — Response</td>
+<td>200 OK: <code>{answer:'Could you provide your Member ID?', thread_id:'uuid-xyz', clarification_needed:true}</code>.</td>
+</tr>
+<tr>
+<td>Turn 2 — In</td>
+<td>POST: <code>{question:'My ID is M123', thread_id:'uuid-xyz'}</code> — <code>member_id</code> provided in utterance.</td>
+</tr>
+<tr>
+<td>Turn 2 — Restore</td>
+<td>LangGraph: restores checkpoint → prior state (history intact) → coordinator sees <code>member_id='M123'</code> in messages.</td>
+</tr>
+<tr>
+<td>Turn 2 — Out</td>
+<td><code>intent=claims</code>, <code>member_id=M123</code>, <code>clarification_needed=false</code> → <code>claims_agent</code> fires → full claims resolution.</td>
+</tr>
+<tr>
+<td>Turn 2 — Response</td>
+<td>200 OK: <code>{answer:'Your claim #CL-9981 was approved on...', thread_id:'uuid-xyz', clarification_needed:false}</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-decisions">Design Decisions and Trade-offs<a class="headerlink" href="#design-decisions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Rationale</th>
+<th>Trade-off</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LangGraph over custom orchestration</td>
+<td>Built-in checkpoint/resume, conditional routing, type-safe state management.</td>
+<td>Adds LangGraph dependency. Graph topology less visible than hand-crafted code.</td>
+</tr>
+<tr>
+<td>Single <code>CallWorkflowState</code> class</td>
+<td>Eliminates inter-node data passing complexity. Every node reads/writes one object.</td>
+<td>State grows as new intents are added. Requires careful field lifecycle management.</td>
+</tr>
+<tr>
+<td><code>MongoDBSaver</code> + <code>MemorySaver</code> fallback</td>
+<td>Zero-downtime operation. Multi-turn HITL works even during MongoDB maintenance.</td>
+<td>During fallback: HITL not durable across restarts.</td>
+</tr>
+<tr>
+<td>Safety net for claims without <code>member_id</code></td>
+<td>Belt-and-suspenders protection against LLM hallucinating a <code>member_id</code>.</td>
+<td>Can over-trigger if LLM extracts partial IDs. Threshold may need tuning.</td>
+</tr>
+<tr>
+<td>ReAct agent for claims/benefits/appointment</td>
+<td>Dynamic tool selection handles variable query patterns without rigid decision trees.</td>
+<td>ReAct loops can be verbose for simple cases. Prompt engineering needed.</td>
+</tr>
+<tr>
+<td><code>_strip_markdown()</code> on all LLM output</td>
+<td>TTS systems cannot render markdown. Plain text ensures voice readability.</td>
+<td>Strips intentional formatting. Rich content via separate digital channel.</td>
+</tr>
+<tr>
+<td>Lazy graph compilation with singleton cache</td>
+<td>Eliminates per-request graph assembly cost. First request bears compilation cost once.</td>
+<td>If checkpointer changes at runtime, compiled graph must be invalidated manually.</td>
+</tr>
+<tr>
+<td>One-active-appointment-per-member</td>
+<td>Prevents scheduling conflicts and simplifies reschedule/cancel logic.</td>
+<td>Members must cancel before booking new appointments.</td>
+</tr>
+<tr>
+<td>Pre-authorization enforcement</td>
+<td>Restricts bookings to authorized providers per insurance plan.</td>
+<td>Members cannot book out-of-network even if slots exist.</td>
+</tr>
+<tr>
+<td>Natural-language date/time parsing client-side</td>
+<td>Prevents SQL injection while supporting human-friendly date expressions.</td>
+<td>Requires comprehensive parsing logic maintained in <code>tools.py</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="roadmap">Future Considerations and Roadmap<a class="headerlink" href="#roadmap" title="Permanent link">&para;</a></h2>
+<h3 id="near-term">Near-Term (Next 3 Months)<a class="headerlink" href="#near-term" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ <strong>Appointment Agent</strong> — Eight-tool ReAct agent for full appointment lifecycle with pre-authorization enforcement.</li>
+<li>⏳ <strong>Streaming Responses</strong> — LangGraph streaming to return partial answers token-by-token, reducing perceived latency.</li>
+<li>⏳ <strong>LangFuse Dashboards</strong> — Per-intent analytics: model accuracy, HITL rate trends, cost-per-query.</li>
+<li>⏳ <strong>Prompt Versioning</strong> — LangFuse prompt management for A/B testing <code>INTENT_PROMPT</code> and <code>GENERAL_PROMPT</code>.</li>
+</ul>
+<h3 id="medium-term">Medium-Term (3–9 Months)<a class="headerlink" href="#medium-term" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Multi-language Support:</strong> language detection in coordinator, language-specific prompts and response templates.</li>
+<li><strong>Pre-authorisation Agent:</strong> dedicated agent for complex preauth workflows.</li>
+<li><strong>Outbound Call Workflow:</strong> proactive outreach (appointment reminders, care gap outreach).</li>
+<li><strong>Azure AI Search Hybrid Index Upgrade:</strong> vector embeddings for benefit documents.</li>
+</ul>
+<h3 id="long-term">Long-Term (9+ Months)<a class="headerlink" href="#long-term" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Federated Multi-Tenant:</strong> separate MongoDB databases per health plan tenant.</li>
+<li><strong>Fine-tuned Intent Classifier:</strong> replace GPT-5.4-mini coordinator with a smaller fine-tuned model for lower latency and cost.</li>
+<li><strong>Agent Evaluation Framework:</strong> automated regression tests via LangSmith / LangFuse evaluations.</li>
+</ul>
+<h2 id="glossary">Glossary<a class="headerlink" href="#glossary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AppointmentSchedulerAgent</code></td>
+<td>Specialist agent for appointment lifecycle management using LangChain ReAct with eight tools.</td>
+</tr>
+<tr>
+<td>appointment intent</td>
+<td>Classified intent value for appointment services (view/book/reschedule/cancel). Routes to <code>appointment_agent</code> node.</td>
+</tr>
+<tr>
+<td><code>CallWorkflowState</code></td>
+<td>Single Pydantic <code>TypedDict</code> carrying all conversation state through the LangGraph graph nodes.</td>
+</tr>
+<tr>
+<td>Checkpointer</td>
+<td>LangGraph component that serialises and persists <code>CallWorkflowState</code> between graph invocations.</td>
+</tr>
+<tr>
+<td><code>CompiledGraph</code></td>
+<td>Result of <code>graph.compile(checkpointer)</code>. Frozen, executable graph instance cached as singleton.</td>
+</tr>
+<tr>
+<td>Coordinator</td>
+<td>First LangGraph node. Classifies intent, extracts identifiers, routes to specialist agent.</td>
+</tr>
+<tr>
+<td><code>CoordinatorOutput</code></td>
+<td>Pydantic model defining the structured JSON schema for the coordinator LLM call response.</td>
+</tr>
+<tr>
+<td>HITL</td>
+<td>Human-in-the-Loop. Graph pauses execution to request missing information from the caller.</td>
+</tr>
+<tr>
+<td><code>InvokeResponse</code></td>
+<td>Structured API response returned by <code>CallWorkflow.invoke()</code> after graph completion.</td>
+</tr>
+<tr>
+<td>LangGraph</td>
+<td>Open-source Python framework for stateful, multi-actor LLM applications as directed graphs.</td>
+</tr>
+<tr>
+<td>LangFuse</td>
+<td>LLM observability platform — token usage, latency, and cost tracking per trace.</td>
+</tr>
+<tr>
+<td><code>MemorySaver</code></td>
+<td>LangGraph in-memory checkpointer. Fallback when MongoDB is unavailable.</td>
+</tr>
+<tr>
+<td><code>MongoDBSaver</code></td>
+<td>LangGraph-compatible MongoDB checkpointer. Stores state in <code>langgraph_checkpoints</code> collection.</td>
+</tr>
+<tr>
+<td>PHI</td>
+<td>Protected Health Information. Any data that could identify a patient. HIPAA-regulated.</td>
+</tr>
+<tr>
+<td><code>pre_auth</code> table</td>
+<td>Azure SQL table storing member pre-authorization records. Constrains appointment booking to authorized providers.</td>
+</tr>
+<tr>
+<td><code>Provider_Slot_2</code></td>
+<td>Azure SQL table for available appointment slots. <code>Is_Booked</code> BIT updated atomically during booking operations.</td>
+</tr>
+<tr>
+<td>ReAct</td>
+<td>Reasoning + Acting. LangChain agent pattern — LLM alternates reasoning steps and tool calls.</td>
+</tr>
+<tr>
+<td><code>StateGraph</code></td>
+<td>LangGraph class defining nodes and edges. Compiled into a <code>CompiledGraph</code> for execution.</td>
+</tr>
+<tr>
+<td><code>thread_id</code></td>
+<td>UUID identifying a single conversation session. Checkpoint key for multi-turn state restoration.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="future-evolution">Future Evolution: Compliance-Driven Intelligence<a class="headerlink" href="#future-evolution" title="Permanent link">&para;</a></h2>
+<p>The next evolution of the platform is a compliance and specification-driven architecture.</p>
+<p>Rather than relying solely on real-time conversation data and backend query results, the platform will incorporate healthcare compliance standards, business policies, and clinical specifications as first-class knowledge sources.</p>
+<p>Examples include:</p>
+<ul>
+<li>HIPAA Technical Safeguards and Privacy Rules</li>
+<li>Insurance Plan Contract Documents</li>
+<li>Clinical Pre-authorisation Criteria</li>
+<li>CMS Billing and Coding Specifications</li>
+<li>Member SLA and Escalation Policies</li>
+<li>Regulatory Audit Requirements</li>
+</ul>
+<p>This enables the platform to reason not only about what a member is asking, but also about what the system is contractually and regulatorily expected to do.</p>
+<p>Benefits include:</p>
+<ul>
+<li>Contract violation detection for out-of-network appointment attempts</li>
+<li>Policy-to-response traceability for audit purposes</li>
+<li>Plan drift identification when benefit documents are updated</li>
+<li>Faster onboarding for new health plan tenants</li>
+<li>More accurate denial reason analysis aligned to payer criteria</li>
+<li>Compliance-aware root cause analysis for claim rejections</li>
+</ul>
+<h2 id="example-flow">Example: Appointment Booking Flow<a class="headerlink" href="#example-flow" title="Permanent link">&para;</a></h2>
+<p>The following example illustrates how the platform handles a real-world appointment booking scenario end-to-end.</p>
+<p><strong>Scenario:</strong> A member calls to book an afternoon appointment with their authorized provider for next week.</p>
+<p>Traditional handling requires the agent to manually check the pre-authorization system, open the scheduling portal, verify slot availability, and confirm the booking — often across 3–4 separate systems.</p>
+<p>Using the Healthcare AI platform:</p>
+<ol>
+<li>The caller's utterance is captured via Twilio / Azure Communication Services.</li>
+<li>The coordinator classifies intent as 'appointment' in a single structured LLM call.</li>
+<li>AppointmentSchedulerAgent queries <code>pre_auth</code> to confirm the authorized provider.</li>
+<li><code>get_slots_for_range</code> retrieves available afternoon slots for the next 5 days.</li>
+<li>The LLM presents options naturally: "I found Tuesday at 2 PM and 3 PM, or Wednesday at 1 PM. Which works?"</li>
+<li><code>validate_appointment_slot</code> confirms availability before committing.</li>
+<li><code>book_appointment</code> atomically inserts the <code>Appointment</code> record and updates <code>Provider_Slot_2.Is_Booked=1</code>.</li>
+<li>The member receives a confirmation with their Appointment ID via TTS.</li>
+<li>The full conversation state is saved to MongoDB for audit and follow-up.</li>
+</ol>
+<p>This reduces average handle time from several minutes to under 30 seconds, eliminates cross-system navigation, and ensures every booking is pre-authorization compliant by design. The platform bridges the gap between natural language, pre-authorization rules, and scheduling systems to deliver appointment booking that is HIPAA-compliant, pre-auth enforced, and fully automated — without any human agent involvement for standard booking scenarios.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.sections", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
