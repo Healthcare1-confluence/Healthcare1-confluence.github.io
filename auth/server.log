@@ -1,0 +1,49 @@
+C:\Users\anjali.sinhhazari\Downloads\healthcare-contact-center-doc\auth\main.py:40: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Will watch for changes in these directories: ['C:\\Users\\anjali.sinhhazari\\Downloads\\healthcare-contact-center-doc\\auth']
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     Started reloader process [37880] using WatchFiles
+INFO:     Started server process [37048]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+[OK] Database initialized
+INFO:     127.0.0.1:62562 - "GET /api/auth/login HTTP/1.1" 200 OK
+[OK] New user created: anjali.sinhhazari@ascendion.com
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:63948 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49208 - "GET /api/auth/login HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:54202 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61470 - "GET /api/auth/login HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:50179 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61045 - "GET /api/auth/login HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:51064 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63411 - "GET /api/auth/login HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:63551 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:57914 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64327 - "GET /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64327 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:54618 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:61355 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54244 - "GET /api/auth/login HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:59042 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:52299 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60945 - "GET /api/auth/login HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:59547 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+[OK] User logged in: anjali.sinhhazari@ascendion.com
+INFO:     127.0.0.1:50171 - "POST /api/auth/login-password HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56801 - "GET /api/auth/login HTTP/1.1" 200 OK
